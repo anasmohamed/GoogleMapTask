@@ -1,0 +1,6 @@
+framework module Pods_GoogleMapTask {
+  umbrella header "Pods-GoogleMapTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
