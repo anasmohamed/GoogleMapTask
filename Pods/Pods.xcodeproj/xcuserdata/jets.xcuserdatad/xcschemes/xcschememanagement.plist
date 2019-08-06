@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FirebaseDatabase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseInstanceID.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +45,16 @@
 			<false/>
 		</dict>
 		<key>GoogleAppMeasurement.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleMaps.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GooglePlaces.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -64,6 +79,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>leveldb-library.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -71,6 +91,92 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>1AD73B07D0A43E21F0EE0F993215B9D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1FFD9D76B4F827E726F7B1A918396D1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B8A390A9A4786A4895D9DE4ED919923</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C65EA475B5C3F70444959B7C1D8FD02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>579344FFBEB7BFAFFC266856D2ADEAA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>591DFE9501B85078121A6C27E4BB543A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5962F09640C9BA8BD1E176DED4C81477</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80661DC03A507E1193A195BEBC41D33B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9234276945B69C78168403B9C5E3D374</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B180FA1BF083AA64E28C4F4D7CA780F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D6C25D86A5E2E211EE33648DED21BA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCE3DE68053C99B18AAD56BE1F98BD73</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C79C63B488FA83C01C37FEBCA6CD4981</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D029FC7B39FACB96916439CADFC449A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB247112DA4EE1C666D473F4B5AD90C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F587E06A098078461AAC9B5F4146A60D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC8C08CE583381CB6B594CD8089DE396</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

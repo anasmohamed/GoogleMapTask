@@ -11,8 +11,11 @@
 		131A6E4F758B9B376BD9A78F /* Pods_GoogleMapTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AF35077991433EADB025B49 /* Pods_GoogleMapTask.framework */; };
 		815F98033AB034754B29754D /* Pods_GoogleMapTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549DE7E778A2A8330230B6D /* Pods_GoogleMapTaskUITests.framework */; };
 		CC179AE622F8C19900B1166E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC179AE522F8C19900B1166E /* GoogleService-Info.plist */; };
+		CC6F4A7E22F9D0ED00398EF2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F4A7D22F9D0ED00398EF2 /* HomeViewController.swift */; };
+		CC9BBACC22F8EF03004FD798 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BBACB22F8EF03004FD798 /* User.swift */; };
+		CC9BBACE22F8F4F2004FD798 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */; };
 		CCCB7C7722F8ADA500AAF479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C7622F8ADA500AAF479 /* AppDelegate.swift */; };
-		CCCB7C7922F8ADA500AAF479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C7822F8ADA500AAF479 /* ViewController.swift */; };
+		CCCB7C7922F8ADA500AAF479 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C7822F8ADA500AAF479 /* LoginViewController.swift */; };
 		CCCB7C7C22F8ADA500AAF479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCB7C7A22F8ADA500AAF479 /* Main.storyboard */; };
 		CCCB7C7E22F8ADA500AAF479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCCB7C7D22F8ADA500AAF479 /* Assets.xcassets */; };
 		CCCB7C8122F8ADA500AAF479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCB7C7F22F8ADA500AAF479 /* LaunchScreen.storyboard */; };
@@ -47,9 +50,12 @@
 		9FC9A46AAD07C0DDAE759C3B /* Pods-GoogleMapTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-GoogleMapTaskTests/Pods-GoogleMapTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A549DE7E778A2A8330230B6D /* Pods_GoogleMapTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC179AE522F8C19900B1166E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC6F4A7D22F9D0ED00398EF2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CC9BBACB22F8EF03004FD798 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CCCB7C7322F8ADA500AAF479 /* GoogleMapTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCB7C7622F8ADA500AAF479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CCCB7C7822F8ADA500AAF479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCCB7C7822F8ADA500AAF479 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CCCB7C7B22F8ADA500AAF479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCCB7C7D22F8ADA500AAF479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCCB7C8022F8ADA500AAF479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC9BBACA22F8EEEF004FD798 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC9BBACB22F8EF03004FD798 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CCCB7C6A22F8ADA400AAF479 = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +153,16 @@
 		CCCB7C7522F8ADA500AAF479 /* GoogleMapTask */ = {
 			isa = PBXGroup;
 			children = (
+				CC9BBACA22F8EEEF004FD798 /* Model */,
 				CC179AE522F8C19900B1166E /* GoogleService-Info.plist */,
 				CCCB7C7622F8ADA500AAF479 /* AppDelegate.swift */,
-				CCCB7C7822F8ADA500AAF479 /* ViewController.swift */,
+				CCCB7C7822F8ADA500AAF479 /* LoginViewController.swift */,
 				CCCB7C7A22F8ADA500AAF479 /* Main.storyboard */,
 				CCCB7C7D22F8ADA500AAF479 /* Assets.xcassets */,
 				CCCB7C7F22F8ADA500AAF479 /* LaunchScreen.storyboard */,
 				CCCB7C8222F8ADA500AAF479 /* Info.plist */,
+				CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */,
+				CC6F4A7D22F9D0ED00398EF2 /* HomeViewController.swift */,
 			);
 			path = GoogleMapTask;
 			sourceTree = "<group>";
@@ -180,6 +197,7 @@
 				CCCB7C7022F8ADA400AAF479 /* Frameworks */,
 				CCCB7C7122F8ADA400AAF479 /* Resources */,
 				4121A24C319D757AF0C91F0B /* [CP] Embed Pods Frameworks */,
+				9FF42F7BD55C636AFDE63F13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,17 +366,39 @@
 				"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FF42F7BD55C636AFDE63F13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAB25EB411C9BF01D7F40685 /* [CP] Check Pods Manifest.lock */ = {
@@ -386,7 +426,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCCB7C7922F8ADA500AAF479 /* ViewController.swift in Sources */,
+				CC6F4A7E22F9D0ED00398EF2 /* HomeViewController.swift in Sources */,
+				CCCB7C7922F8ADA500AAF479 /* LoginViewController.swift in Sources */,
+				CC9BBACE22F8F4F2004FD798 /* SignUpViewController.swift in Sources */,
+				CC9BBACC22F8EF03004FD798 /* User.swift in Sources */,
 				CCCB7C7722F8ADA500AAF479 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

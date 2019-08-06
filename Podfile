@@ -10,6 +10,10 @@ target 'GoogleMapTask' do
   # Pods for GoogleMapTask
 pod 'Firebase/Core’
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'GoogleMaps'
+pod 'GooglePlaces'
+
   target 'GoogleMapTaskTests' do
     inherit! :search_paths
    
