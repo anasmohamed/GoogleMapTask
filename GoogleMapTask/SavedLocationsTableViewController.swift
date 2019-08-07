@@ -11,10 +11,12 @@ import Firebase
 class SavedLocationsTableViewController: UITableViewController {
     var ref: DatabaseReference!
     var myLocationList = [LocationModel]()
+    let cellReuseIdentifier = "LocationCell"
+    var user = User()
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        LoadLoctains()
+        LoadLocations()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -22,32 +24,32 @@ class SavedLocationsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myLocationList.count
     }
     
-    /*
+    
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
+     let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! LocationCellTableViewCell
+     cell.labelLoctionCellUserName.text = user.userName
+     cell.labelLocationCellPassword.text = user.password
+        cell.labelLocationCellToken.text = user.uid
+        cell.labelLocationCellLocation.text = myLocationList[indexPath.row].city + " " + myLocationList[indexPath.row].country
+        
      // Configure the cell...
      
      return cell
      }
-     */
+ 
     
     /*
      // Override to support conditional editing of the table view.
@@ -93,23 +95,19 @@ class SavedLocationsTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    func LoadLoctains() {
+    func LoadLocations() {
         let userID = Auth.auth().currentUser?.uid
         ref.child("users").child(userID!).child("loctions").observe(.childAdded, with: { (snapshot) in
-            if snapshot.childrenCount > 0{
             
-                self.myLocationList.removeAll()
-                for result in snapshot.children.allObjects as! [DataSnapshot]{
-                   
-                    let results = result.value as? [String : AnyObject]
-                    print(results)
-                    let city = results?["city"]
-                    let country = results?["country"]
-                
-                    
-                    
-                }
+            let results = snapshot.value as? [String : AnyObject]
+            let city = results?["city"]
+            let country = results?["country"]
+            let myLocations = LocationModel(city: (city as! String?)!, country: (country as! String?)!)
+            self.myLocationList.append(myLocations)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
+            
         })
     }
 }

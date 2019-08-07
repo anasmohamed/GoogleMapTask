@@ -11,10 +11,13 @@ import Firebase
 
 class User {
     
-    let uid: String
-    let email: String
-    let userName : String
-    let password : String
+    var uid: String = ""
+    var email: String = ""
+    var userName : String = ""
+    var password : String = ""
+    init() {
+        
+    }
     
     init(uid: String, email: String, userName: String, password: String) {
         self.uid = uid

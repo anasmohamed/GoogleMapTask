@@ -17,9 +17,12 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
     let alert = Alert()
     var locationModel = LocationModel()
     var ref: DatabaseReference!
-    
+    var user = User()
+   
     @IBOutlet weak var mapView: MKMapView!
-    
+    @IBOutlet weak var labelHomeUserName: UILabel!
+    @IBOutlet weak var labelHomePassword: UILabel!
+    @IBOutlet weak var labelHomeToken: UILabel!
     
     
     
@@ -30,10 +33,15 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
         mapView.mapType = MKMapType.standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
+       
+      
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         determineCurrentLocation()
+        labelHomeUserName.text = user.userName
+        labelHomePassword.text = user.password
+        labelHomeToken.text = user.uid
     }
     
     @IBAction func saveLocation(_ sender: Any) {
@@ -53,14 +61,13 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-        
         if CLLocationManager.locationServicesEnabled() {
             //locationManager.startUpdatingHeading()
             locationManager.startUpdatingLocation()
         }
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
+        let userLocation:CLLocation = locations.last! as CLLocation
         
         // Call stopUpdatingLocation() to stop listening for location updates,
         // other wise this function will be called every time when user location changes.
@@ -110,13 +117,6 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
         //Ignoring user
         UIApplication.shared.beginIgnoringInteractionEvents()
         
-        //Activity Indicator
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
-        
-        self.view.addSubview(activityIndicator)
         
         //Hide search bar
         searchBar.resignFirstResponder()
@@ -130,7 +130,7 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
         
         activeSearch.start { (response, error) in
             
-            activityIndicator.stopAnimating()
+           
             UIApplication.shared.endIgnoringInteractionEvents()
             
             if response == nil
@@ -166,5 +166,11 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
             
         }
     }
-    
+    @IBAction func locationTableButtonDidTabbed(_ sender: Any) {
+        let locationVC = storyboard?.instantiateViewController(withIdentifier: "LocationsTableVC") as! SavedLocationsTableViewController
+        locationVC.user = user
+        self.present(locationVC, animated: true, completion: nil)
+        
+        
+    }
 }

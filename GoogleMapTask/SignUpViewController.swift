@@ -42,8 +42,10 @@ class SignUpViewController: UIViewController {
                                    password: self.textFieldSignUpPassword.text!)
             }
         }
+        
+        self.ref.child("users").child(user.uid).setValue(["username": userName,"password":password])
         user = User(uid: (Auth.auth().currentUser?.uid)!,email: email,userName: userName,password: password)
-        self.ref.child("users").child(user.uid).setValue(["username": userName])
+        homeVC.user = user
         self.present(homeVC, animated: true, completion: nil)
         
     }

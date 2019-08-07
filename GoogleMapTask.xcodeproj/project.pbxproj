@@ -18,6 +18,8 @@
 		CC86D7FC22FA44F2000F82F3 /* SavedLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86D7FB22FA44F2000F82F3 /* SavedLocationsTableViewController.swift */; };
 		CC9BBACC22F8EF03004FD798 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BBACB22F8EF03004FD798 /* User.swift */; };
 		CC9BBACE22F8F4F2004FD798 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */; };
+		CC9C489D22FAFF22001B4331 /* LocationCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C489C22FAFF22001B4331 /* LocationCellTableViewCell.swift */; };
+		CC9C489F22FB253E001B4331 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9C489E22FB253E001B4331 /* CoreLocation.framework */; };
 		CCCB7C7722F8ADA500AAF479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C7622F8ADA500AAF479 /* AppDelegate.swift */; };
 		CCCB7C7922F8ADA500AAF479 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C7822F8ADA500AAF479 /* LoginViewController.swift */; };
 		CCCB7C7C22F8ADA500AAF479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCCB7C7A22F8ADA500AAF479 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		CC86D7FB22FA44F2000F82F3 /* SavedLocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationsTableViewController.swift; sourceTree = "<group>"; };
 		CC9BBACB22F8EF03004FD798 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CC9C489C22FAFF22001B4331 /* LocationCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellTableViewCell.swift; sourceTree = "<group>"; };
+		CC9C489E22FB253E001B4331 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CCCB7C7322F8ADA500AAF479 /* GoogleMapTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCB7C7622F8ADA500AAF479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCCB7C7822F8ADA500AAF479 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9C489F22FB253E001B4331 /* CoreLocation.framework in Frameworks */,
 				CC86D7F822F9F7FC000F82F3 /* MapKit.framework in Frameworks */,
 				131A6E4F758B9B376BD9A78F /* Pods_GoogleMapTask.framework in Frameworks */,
 			);
@@ -122,6 +127,7 @@
 		3FF3022E0D6548533469A476 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC9C489E22FB253E001B4331 /* CoreLocation.framework */,
 				CC86D7F722F9F7FC000F82F3 /* MapKit.framework */,
 				2AF35077991433EADB025B49 /* Pods_GoogleMapTask.framework */,
 				E800A8B8905B3C8BCFE80070 /* Pods_GoogleMapTaskTests.framework */,
@@ -136,6 +142,7 @@
 				CC9BBACB22F8EF03004FD798 /* User.swift */,
 				CC86D7F522F9E68A000F82F3 /* LocationModel.swift */,
 				CC86D7F922FA19FB000F82F3 /* Alert.swift */,
+				CC9C489C22FAFF22001B4331 /* LocationCellTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -428,6 +435,7 @@
 				CC9BBACE22F8F4F2004FD798 /* SignUpViewController.swift in Sources */,
 				CC9BBACC22F8EF03004FD798 /* User.swift in Sources */,
 				CC86D7F622F9E68A000F82F3 /* LocationModel.swift in Sources */,
+				CC9C489D22FAFF22001B4331 /* LocationCellTableViewCell.swift in Sources */,
 				CC86D7FC22FA44F2000F82F3 /* SavedLocationsTableViewController.swift in Sources */,
 				CCCB7C7722F8ADA500AAF479 /* AppDelegate.swift in Sources */,
 				CC86D7FA22FA19FB000F82F3 /* Alert.swift in Sources */,
