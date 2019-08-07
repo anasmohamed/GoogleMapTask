@@ -166,6 +166,15 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
             
         }
     }
+    @IBAction func logoutButtonTabbed(_ sender: Any) {
+        
+        try! Auth.auth().signOut()
+        
+        if let storyboard = self.storyboard {
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+            self.present(loginVC, animated: false, completion: nil)
+        }
+    }
     @IBAction func locationTableButtonDidTabbed(_ sender: Any) {
         let locationVC = storyboard?.instantiateViewController(withIdentifier: "LocationsTableVC") as! SavedLocationsTableViewController
         locationVC.user = user

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -340,7 +341,7 @@
                                 </constraints>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BC0-fm-cEc">
-                                <rect key="frame" x="0.0" y="261" width="365" height="406"/>
+                                <rect key="frame" x="0.0" y="295" width="375" height="372"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kq-WL-KTD">
                                 <rect key="frame" x="0.0" y="183" width="375" height="30"/>
@@ -372,18 +373,30 @@
                                     <action selector="saveLocation:" destination="lun-ye-BCc" eventType="touchUpInside" id="CtM-TI-QpS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sca-Aw-LwU">
+                                <rect key="frame" x="116" y="257" width="143" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="c5A-tZ-Fti"/>
+                                </constraints>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTabbed:" destination="lun-ye-BCc" eventType="touchUpInside" id="eV4-1u-hHh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mfk-W2-fsx" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leading" id="0EM-eP-UDb"/>
                             <constraint firstAttribute="trailing" secondItem="NiJ-89-pB4" secondAttribute="trailing" constant="10" id="2fZ-Ie-HXB"/>
+                            <constraint firstItem="BC0-fm-cEc" firstAttribute="top" secondItem="sca-Aw-LwU" secondAttribute="bottom" constant="8" id="3BH-HV-1a1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sca-Aw-LwU" secondAttribute="trailing" constant="100" id="3i0-M1-sSg"/>
                             <constraint firstAttribute="trailing" secondItem="mfk-W2-fsx" secondAttribute="trailing" id="44c-ca-lbn"/>
                             <constraint firstAttribute="trailing" secondItem="nrY-jA-mmo" secondAttribute="trailing" constant="10" id="6Ja-7c-jZd"/>
                             <constraint firstItem="BC0-fm-cEc" firstAttribute="bottom" secondItem="Tk2-9S-dGw" secondAttribute="top" id="A7w-7Y-AfJ"/>
-                            <constraint firstItem="BC0-fm-cEc" firstAttribute="top" secondItem="mfk-W2-fsx" secondAttribute="bottom" constant="10" id="HAE-oP-Jwr"/>
                             <constraint firstAttribute="trailing" secondItem="ulD-qs-toU" secondAttribute="trailing" constant="10" id="JrG-4j-76v"/>
                             <constraint firstItem="zgJ-M5-W61" firstAttribute="centerX" secondItem="bqG-mc-J4Q" secondAttribute="centerX" id="Kej-4y-F2Y"/>
                             <constraint firstItem="zgJ-M5-W61" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leading" id="Lam-he-eTb"/>
+                            <constraint firstItem="sca-Aw-LwU" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leadingMargin" constant="100" id="Nln-rq-Qai"/>
                             <constraint firstItem="mfk-W2-fsx" firstAttribute="top" secondItem="2kq-WL-KTD" secondAttribute="bottom" constant="8" symbolic="YES" id="SXJ-Eg-Vd2"/>
                             <constraint firstItem="ulD-qs-toU" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leading" constant="10" id="VTX-09-avm"/>
                             <constraint firstItem="2kq-WL-KTD" firstAttribute="top" secondItem="zgJ-M5-W61" secondAttribute="bottom" constant="6" id="VpB-Xs-4Vg"/>
@@ -391,11 +404,13 @@
                             <constraint firstItem="nrY-jA-mmo" firstAttribute="top" secondItem="ulD-qs-toU" secondAttribute="bottom" constant="8" id="bM5-Rz-70P"/>
                             <constraint firstItem="2kq-WL-KTD" firstAttribute="top" secondItem="bqG-mc-J4Q" secondAttribute="top" constant="183" id="eE4-rG-Nu6"/>
                             <constraint firstItem="2kq-WL-KTD" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leading" id="ex5-pb-B3K"/>
-                            <constraint firstItem="BC0-fm-cEc" firstAttribute="trailing" secondItem="NiJ-89-pB4" secondAttribute="trailing" id="ga0-1w-v8b"/>
+                            <constraint firstItem="sca-Aw-LwU" firstAttribute="top" secondItem="mfk-W2-fsx" secondAttribute="bottom" constant="6" id="fRJ-yC-gc6"/>
                             <constraint firstItem="ulD-qs-toU" firstAttribute="top" secondItem="Iun-BH-YLu" secondAttribute="bottom" constant="8" id="hgs-cY-Mhe"/>
                             <constraint firstItem="nrY-jA-mmo" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leading" constant="10" id="ixr-fc-DkL"/>
                             <constraint firstItem="NiJ-89-pB4" firstAttribute="leading" secondItem="bqG-mc-J4Q" secondAttribute="leading" constant="10" id="kt6-Tb-TNc"/>
                             <constraint firstAttribute="trailing" secondItem="zgJ-M5-W61" secondAttribute="trailing" id="lKK-IR-khS"/>
+                            <constraint firstAttribute="trailing" secondItem="BC0-fm-cEc" secondAttribute="trailing" id="r2O-CN-Zlr"/>
+                            <constraint firstItem="sca-Aw-LwU" firstAttribute="centerX" secondItem="bqG-mc-J4Q" secondAttribute="centerX" id="re6-Xk-dGc"/>
                             <constraint firstItem="mfk-W2-fsx" firstAttribute="centerX" secondItem="bqG-mc-J4Q" secondAttribute="centerX" id="rhp-6T-c8b"/>
                             <constraint firstItem="NiJ-89-pB4" firstAttribute="top" secondItem="nrY-jA-mmo" secondAttribute="bottom" constant="8" id="t9u-Ls-229"/>
                             <constraint firstItem="2kq-WL-KTD" firstAttribute="centerX" secondItem="bqG-mc-J4Q" secondAttribute="centerX" id="ue5-WB-7uH"/>
@@ -434,7 +449,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="165"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MEi-Eh-PNv" id="5yx-nL-S1u">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="j0z-4j-RAe">
