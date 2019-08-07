@@ -49,16 +49,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GoogleMaps.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>GooglePlaces.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,11 +82,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1AD73B07D0A43E21F0EE0F993215B9D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1FFD9D76B4F827E726F7B1A918396D1A</key>
 		<dict>
 			<key>primary</key>
@@ -127,6 +112,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7247FE0ABF6FB2CE8DD39251811ECB02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>80661DC03A507E1193A195BEBC41D33B</key>
 		<dict>
 			<key>primary</key>
@@ -147,17 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCE3DE68053C99B18AAD56BE1F98BD73</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C79C63B488FA83C01C37FEBCA6CD4981</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D029FC7B39FACB96916439CADFC449A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

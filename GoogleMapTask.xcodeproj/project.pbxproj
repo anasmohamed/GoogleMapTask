@@ -12,6 +12,10 @@
 		815F98033AB034754B29754D /* Pods_GoogleMapTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549DE7E778A2A8330230B6D /* Pods_GoogleMapTaskUITests.framework */; };
 		CC179AE622F8C19900B1166E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC179AE522F8C19900B1166E /* GoogleService-Info.plist */; };
 		CC6F4A7E22F9D0ED00398EF2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F4A7D22F9D0ED00398EF2 /* HomeViewController.swift */; };
+		CC86D7F622F9E68A000F82F3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86D7F522F9E68A000F82F3 /* LocationModel.swift */; };
+		CC86D7F822F9F7FC000F82F3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC86D7F722F9F7FC000F82F3 /* MapKit.framework */; };
+		CC86D7FA22FA19FB000F82F3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86D7F922FA19FB000F82F3 /* Alert.swift */; };
+		CC86D7FC22FA44F2000F82F3 /* SavedLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86D7FB22FA44F2000F82F3 /* SavedLocationsTableViewController.swift */; };
 		CC9BBACC22F8EF03004FD798 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BBACB22F8EF03004FD798 /* User.swift */; };
 		CC9BBACE22F8F4F2004FD798 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */; };
 		CCCB7C7722F8ADA500AAF479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C7622F8ADA500AAF479 /* AppDelegate.swift */; };
@@ -51,6 +55,10 @@
 		A549DE7E778A2A8330230B6D /* Pods_GoogleMapTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC179AE522F8C19900B1166E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC6F4A7D22F9D0ED00398EF2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CC86D7F522F9E68A000F82F3 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		CC86D7F722F9F7FC000F82F3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CC86D7F922FA19FB000F82F3 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CC86D7FB22FA44F2000F82F3 /* SavedLocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationsTableViewController.swift; sourceTree = "<group>"; };
 		CC9BBACB22F8EF03004FD798 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CCCB7C7322F8ADA500AAF479 /* GoogleMapTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC86D7F822F9F7FC000F82F3 /* MapKit.framework in Frameworks */,
 				131A6E4F758B9B376BD9A78F /* Pods_GoogleMapTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +122,7 @@
 		3FF3022E0D6548533469A476 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC86D7F722F9F7FC000F82F3 /* MapKit.framework */,
 				2AF35077991433EADB025B49 /* Pods_GoogleMapTask.framework */,
 				E800A8B8905B3C8BCFE80070 /* Pods_GoogleMapTaskTests.framework */,
 				A549DE7E778A2A8330230B6D /* Pods_GoogleMapTaskUITests.framework */,
@@ -124,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				CC9BBACB22F8EF03004FD798 /* User.swift */,
+				CC86D7F522F9E68A000F82F3 /* LocationModel.swift */,
+				CC86D7F922FA19FB000F82F3 /* Alert.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 				CCCB7C8222F8ADA500AAF479 /* Info.plist */,
 				CC9BBACD22F8F4F2004FD798 /* SignUpViewController.swift */,
 				CC6F4A7D22F9D0ED00398EF2 /* HomeViewController.swift */,
+				CC86D7FB22FA44F2000F82F3 /* SavedLocationsTableViewController.swift */,
 			);
 			path = GoogleMapTask;
 			sourceTree = "<group>";
@@ -197,7 +210,6 @@
 				CCCB7C7022F8ADA400AAF479 /* Frameworks */,
 				CCCB7C7122F8ADA400AAF479 /* Resources */,
 				4121A24C319D757AF0C91F0B /* [CP] Embed Pods Frameworks */,
-				9FF42F7BD55C636AFDE63F13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +271,11 @@
 					CCCB7C7222F8ADA400AAF479 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CCCB7C8622F8ADA500AAF479 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -381,26 +398,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9FF42F7BD55C636AFDE63F13 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoogleMapTask/Pods-GoogleMapTask-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EAB25EB411C9BF01D7F40685 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,7 +427,10 @@
 				CCCB7C7922F8ADA500AAF479 /* LoginViewController.swift in Sources */,
 				CC9BBACE22F8F4F2004FD798 /* SignUpViewController.swift in Sources */,
 				CC9BBACC22F8EF03004FD798 /* User.swift in Sources */,
+				CC86D7F622F9E68A000F82F3 /* LocationModel.swift in Sources */,
+				CC86D7FC22FA44F2000F82F3 /* SavedLocationsTableViewController.swift in Sources */,
 				CCCB7C7722F8ADA500AAF479 /* AppDelegate.swift in Sources */,
+				CC86D7FA22FA19FB000F82F3 /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
