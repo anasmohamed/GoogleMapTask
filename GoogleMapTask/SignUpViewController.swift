@@ -52,6 +52,9 @@ class SignUpViewController: UIViewController {
     
     
     
+    @IBAction func signInButtonDidTabbed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     
