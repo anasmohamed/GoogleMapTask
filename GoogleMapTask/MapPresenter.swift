@@ -10,14 +10,16 @@ import Foundation
 import MapKit
 import Firebase
 protocol MapPresenterProtocol {
-    func getCityNameFromLatitudeAndLongtitude(latitude :CLLocationDegrees, longitude: CLLocationDegrees)
+    func getCityNameFromLatitudeAndLongtitude(latitude :CLLocationDegrees, longitude: CLLocationDegrees,locationModel:LocationModel)
     func saveLocation(location: LocationModel,ref : DatabaseReference)
 }
 class MapPresenter: MapPresenterProtocol {
-    func getCityNameFromLatitudeAndLongtitude(latitude :CLLocationDegrees, longitude: CLLocationDegrees)
+    
+    func getCityNameFromLatitudeAndLongtitude(latitude :CLLocationDegrees, longitude: CLLocationDegrees,locationModel :LocationModel)
     {
+        var  insidelocationModel : LocationModel!
         let geoCoder = CLGeocoder()
-        var location = CLLocation(latitude:latitude, longitude:longitude )
+        let location = CLLocation(latitude:latitude, longitude:longitude )
         geoCoder.reverseGeocodeLocation(location, completionHandler:
             {
                 placemarks, error -> Void in
@@ -28,11 +30,13 @@ class MapPresenter: MapPresenterProtocol {
                 // City
                 if let city = placeMark.subAdministrativeArea {
                     
-                 let locationModel = LocationModel(city: placeMark.subAdministrativeArea!, country: placeMark.country!)
+                  locationModel.city = city
+                  locationModel.country = placeMark.country!
                 }
                 
-                
         })
+       
+        
     }
     func saveLocation(location locationModel: LocationModel,ref: DatabaseReference)
     {

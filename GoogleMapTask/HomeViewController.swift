@@ -73,7 +73,7 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         mapView.setRegion(region, animated: true)
-        mapPresenter.getCityNameFromLatitudeAndLongtitude(latitude:userLocation.coordinate.latitude , longitude:userLocation.coordinate.longitude )
+        mapPresenter.getCityNameFromLatitudeAndLongtitude(latitude:userLocation.coordinate.latitude , longitude:userLocation.coordinate.longitude,locationModel: locationModel )
         
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
@@ -125,9 +125,8 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
                 //Getting data
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
-//                self.getCityNameFromLatitudeAndLongtitude(latitude: latitude!, longitude: longitude!)
-//                //Create annotation
-                
+            
+            self.mapPresenter.getCityNameFromLatitudeAndLongtitude(latitude: latitude!, longitude: longitude!,locationModel: self.locationModel)
                 let annotation = MKPointAnnotation()
                 annotation.title = searchBar.text
                 annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)

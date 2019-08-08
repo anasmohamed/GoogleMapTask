@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var textFieldSignUpPassword: UITextField!
     @IBOutlet weak var textFieldSignUpUserName: UITextField!
     var ref: DatabaseReference!
-    var user : User!
+    //var user : User!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -40,14 +40,18 @@ class SignUpViewController: UIViewController {
             if error == nil {
                 Auth.auth().signIn(withEmail: self.textFieldSignUpEmail.text!,
                                    password: self.textFieldSignUpPassword.text!)
+              let  user = User(uid: (Auth.auth().currentUser?.uid)!,email: email,userName: userName,password: password)
+                self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["username": userName,"password":password])
+                
+                homeVC.user = user
+                self.present(homeVC, animated: true, completion: nil)
+            }
+            else{
+            print("the error is \(error)")
             }
         }
       print(Auth.auth().currentUser?.uid)
-        user = User(uid: (Auth.auth().currentUser?.uid)!,email: email,userName: userName,password: password)
-        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["username": userName,"password":password])
-        
-        homeVC.user = user
-        self.present(homeVC, animated: true, completion: nil)
+       
         
     }
     

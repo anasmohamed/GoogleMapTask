@@ -8,6 +8,7 @@ target 'GoogleMapTask' do
   use_frameworks!
 
   # Pods for GoogleMapTask
+ pod 'Firebase/Core' 
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 
