@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference().child("users")
-        userID = Auth.auth().currentUser?.uid
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
+        userID = Auth.auth().currentUser!.uid
         ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary

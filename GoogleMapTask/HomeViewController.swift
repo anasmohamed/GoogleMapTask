@@ -18,7 +18,8 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
     var locationModel = LocationModel()
     var ref: DatabaseReference!
     var user = User()
-   
+    var mapPresenter: MapPresenterProtocol = MapPresenter()
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var labelHomeUserName: UILabel!
     @IBOutlet weak var labelHomePassword: UILabel!
@@ -29,12 +30,12 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-
+        
         mapView.mapType = MKMapType.standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-       
-      
+        
+        
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -45,16 +46,13 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
     }
     
     @IBAction func saveLocation(_ sender: Any) {
-        print("location city :\(self.locationModel.city)")
-        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).child("loctions").childByAutoId().setValue(["city":locationModel.city,"country":locationModel.country])
-
-    }
+        mapPresenter.saveLocation(location: locationModel,ref: ref)    }
     @IBAction func showSearchBar(_ sender: AnyObject) {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         present(searchController, animated: true, completion: nil)
     }
-
+    
     func determineCurrentLocation()
     {
         locationManager = CLLocationManager()
@@ -69,41 +67,19 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations.last! as CLLocation
         
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        //manager.stopUpdatingLocation()
+        
         
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         mapView.setRegion(region, animated: true)
-        getCityNameFromLatitudeAndLongtitude(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        mapPresenter.getCityNameFromLatitudeAndLongtitude(latitude:userLocation.coordinate.latitude , longitude:userLocation.coordinate.longitude )
+        
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
         myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
         myAnnotation.title = "Current location"
         mapView.addAnnotation(myAnnotation)
-    }
-    // Add below code to get address for touch coordinates.
-    func getCityNameFromLatitudeAndLongtitude(latitude :CLLocationDegrees, longitude: CLLocationDegrees )
-    {
-        let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude:latitude, longitude:longitude )
-        geoCoder.reverseGeocodeLocation(location, completionHandler:
-            {
-                placemarks, error -> Void in
-                
-                // Place details
-                guard let placeMark = placemarks?.first else { return }
-                
-                // City
-                if let city = placeMark.subAdministrativeArea {
-                
-                    self.locationModel = LocationModel(city: placeMark.subAdministrativeArea!, country: placeMark.country!)
-                }
-               
-             
-        })
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
@@ -130,7 +106,7 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
         
         activeSearch.start { (response, error) in
             
-           
+            
             UIApplication.shared.endIgnoringInteractionEvents()
             
             if response == nil
@@ -149,8 +125,8 @@ class HomeViewController: UIViewController,MKMapViewDelegate, CLLocationManagerD
                 //Getting data
                 let latitude = response?.boundingRegion.center.latitude
                 let longitude = response?.boundingRegion.center.longitude
-                self.getCityNameFromLatitudeAndLongtitude(latitude: latitude!, longitude: longitude!)
-                //Create annotation
+//                self.getCityNameFromLatitudeAndLongtitude(latitude: latitude!, longitude: longitude!)
+//                //Create annotation
                 
                 let annotation = MKPointAnnotation()
                 annotation.title = searchBar.text

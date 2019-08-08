@@ -28,6 +28,7 @@
 		CC9C48BD22FB45B3001B4331 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C48B022FB45B2001B4331 /* User.swift */; };
 		CCCB7C8C22F8ADA500AAF479 /* GoogleMapTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C8B22F8ADA500AAF479 /* GoogleMapTaskTests.swift */; };
 		CCCB7C9722F8ADA500AAF479 /* GoogleMapTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB7C9622F8ADA500AAF479 /* GoogleMapTaskUITests.swift */; };
+		CCD1CFFF22FB98C700D38CFA /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD1CFFE22FB98C700D38CFA /* MapPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		CCCB7C9222F8ADA500AAF479 /* GoogleMapTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCCB7C9622F8ADA500AAF479 /* GoogleMapTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapTaskUITests.swift; sourceTree = "<group>"; };
 		CCCB7C9822F8ADA500AAF479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD1CFFE22FB98C700D38CFA /* MapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		E800A8B8905B3C8BCFE80070 /* Pods_GoogleMapTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,20 +142,18 @@
 		CC9C48A122FB45B2001B4331 /* GoogleMapTask */ = {
 			isa = PBXGroup;
 			children = (
+				CCD1CFFD22FB971C00D38CFA /* Model */,
 				CC5AFB9B22FB6D27000F262F /* GoogleService-Info.plist */,
-				CC9C48A222FB45B2001B4331 /* Alert.swift */,
 				CC9C48A322FB45B2001B4331 /* AppDelegate.swift */,
 				CC9C48A422FB45B2001B4331 /* Assets.xcassets */,
 				CC9C48A522FB45B2001B4331 /* LaunchScreen.storyboard */,
 				CC9C48A722FB45B2001B4331 /* Main.storyboard */,
 				CC9C48A922FB45B2001B4331 /* HomeViewController.swift */,
 				CC9C48AA22FB45B2001B4331 /* Info.plist */,
-				CC9C48AB22FB45B2001B4331 /* LocationCellTableViewCell.swift */,
-				CC9C48AC22FB45B2001B4331 /* LocationModel.swift */,
 				CC9C48AD22FB45B2001B4331 /* LoginViewController.swift */,
 				CC9C48AE22FB45B2001B4331 /* SavedLocationsTableViewController.swift */,
 				CC9C48AF22FB45B2001B4331 /* SignUpViewController.swift */,
-				CC9C48B022FB45B2001B4331 /* User.swift */,
+				CCD1CFFE22FB98C700D38CFA /* MapPresenter.swift */,
 			);
 			path = GoogleMapTask;
 			sourceTree = "<group>";
@@ -196,6 +196,17 @@
 				CCCB7C9822F8ADA500AAF479 /* Info.plist */,
 			);
 			path = GoogleMapTaskUITests;
+			sourceTree = "<group>";
+		};
+		CCD1CFFD22FB971C00D38CFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC9C48A222FB45B2001B4331 /* Alert.swift */,
+				CC9C48AB22FB45B2001B4331 /* LocationCellTableViewCell.swift */,
+				CC9C48AC22FB45B2001B4331 /* LocationModel.swift */,
+				CC9C48B022FB45B2001B4331 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +440,7 @@
 				CC9C48B822FB45B3001B4331 /* LocationCellTableViewCell.swift in Sources */,
 				CC9C48BD22FB45B3001B4331 /* User.swift in Sources */,
 				CC9C48B922FB45B3001B4331 /* LocationModel.swift in Sources */,
+				CCD1CFFF22FB98C700D38CFA /* MapPresenter.swift in Sources */,
 				CC9C48B622FB45B2001B4331 /* HomeViewController.swift in Sources */,
 				CC9C48BB22FB45B3001B4331 /* SavedLocationsTableViewController.swift in Sources */,
 			);
